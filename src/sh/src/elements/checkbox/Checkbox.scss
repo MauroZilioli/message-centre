@@ -1,0 +1,76 @@
+@import './../../_vars';
+
+.sh-checkbox {
+  display: inline-block;
+  margin: 6px;
+  padding: 2px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &_icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    display: inline-block;
+    vertical-align: baseline;
+    background-color: $color-background;
+    border: solid 2px $color-foreground;
+
+    &::before {
+      display: inline-block;
+      vertical-align: baseline;
+      margin-left: 1px;
+      font-family: 'Shicons';
+      font-weight: bold;
+      content: '';
+    }
+  }
+
+  &_input:focus ~ &_icon {
+    box-shadow: 0 0 2px 1px rgb(59, 153, 252);
+  }
+
+  &:hover &_input:not(:disabled):not(:focus) ~ &_icon {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &_input {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+
+    & + .sh-checkbox_icon {
+
+    }
+    &:checked + .sh-checkbox_icon {
+      color: $color-background;
+      border-color: $color-highlight;
+      background-color: $color-highlight;
+
+      &::before {
+        content: '\e823';
+      }
+    }
+    &:disabled + .sh-checkbox_icon {
+      color: $color-disabled-foreground;
+      border-color: $color-disabled-foreground;
+      background-color: $color-disabled-background;
+    }
+    &:disabled ~ .sh-checkbox_content {
+      color: $color-disabled-foreground;
+    }
+  }
+
+  &_content {
+    padding-left: 14px;
+
+    &:empty {
+      padding-left: 0;
+    }
+  }
+}

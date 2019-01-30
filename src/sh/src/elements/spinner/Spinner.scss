@@ -1,0 +1,87 @@
+@import './../../_vars';
+
+.sh-spinner {
+  display: inline-table;
+  outline: none;
+  overflow: hidden;
+  cursor: default;
+  color: $color-foreground;
+  margin: 1px;
+
+  &_input {
+    display: table-cell;
+    width: 82px;
+    vertical-align: baseline;
+    padding: 6px;
+    margin: 4px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-align: center;
+
+    border: 1px solid $color-disabled-foreground;
+    background-color: $color-background;
+  }
+
+  &--disabled {
+    .sh-spinner_input {
+      background-color: $color-disabled-background;
+      border-color: $color-disabled-background;
+      color: $color-disabled-foreground;
+      cursor: default;
+    }
+
+    .sh-spinner_button {
+      cursor: default;
+    }
+  }
+
+  &--focused {
+    .sh-spinner_input {
+
+    }
+  }
+
+  &--empty {
+    .sh-spinner_input {
+      border-color: $color-disabled-foreground;
+    }
+  }
+
+  &_button {
+    width: 26px;
+    height: 26px;
+
+    display: table-cell;
+
+    border: none;
+    color: $color-placeholder;
+    background-color: $color-background;
+    cursor: pointer;
+
+    &::before {
+      font-family: 'Shicons';
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &:hover {
+      color: $color-foreground;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:disabled {
+      color: $color-disabled-foreground;
+    }
+
+    &--increment::before {
+      content: '\e813';
+    }
+    &--decrement::before {
+      content: '\e818';
+    }
+  }
+}

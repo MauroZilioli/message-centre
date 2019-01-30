@@ -1,0 +1,44 @@
+@import './../../_vars';
+
+.sh-textbox {
+  min-width: 290px;
+  margin: 1px;
+
+  background-color: $color-background;
+  border: none;
+  border-bottom: solid 1px $color-disabled-foreground;
+  border-radius: 0;
+
+  padding: 2px;
+  padding-left: 0px;
+
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+
+  &[disabled] {
+    background-color: $color-background;
+    border-color: $color-disabled-foreground;
+    color: $color-disabled-foreground;
+    cursor: default;
+  };
+
+  &:invalid {
+    border-bottom-color: $color-attention;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom-color: $color-focus;
+  }
+
+  &--text {
+
+  }
+  &--email {
+
+  }
+  &--password {
+
+  }
+}

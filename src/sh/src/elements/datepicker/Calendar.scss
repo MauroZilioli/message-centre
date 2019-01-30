@@ -1,0 +1,156 @@
+@import './../../_vars';
+
+.sh-calendar {
+  position: absolute;
+  width: 300px;
+  box-shadow: 0 0 5px $color-placeholder;
+
+  &-row {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &-cell {
+    min-width: 43px;
+    background-color: $color-background;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  &-head {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  &-prev,
+  &-next {
+    background-color: $color-background;
+    border: none;
+    cursor: pointer;
+  }
+
+  &-prev::before,
+  &-next::before {
+    position: relative;
+    top: 0;
+    width: 0.6em;
+    height: 0.6em;
+    border-top: 0.2em solid $color-foreground;
+    content: "";
+    display: inline-block;
+    transform: rotate(-45deg);
+  }
+
+  &-prev::before {
+    margin-left: 0.3em;
+    border-left: 0.2em solid $color-foreground;
+    transform: rotate(-45deg);
+  }
+
+  &-prev:hover::before {
+    border-left-color: $color-background;
+    border-top-color: $color-background;
+  }
+
+  &-next::before {
+    margin-right: 0.3em;
+    border-right: 0.2em solid $color-foreground;
+    transform: rotate(45deg);
+  }
+
+  &-next:hover::before {
+    border-right-color: $color-background;
+    border-top-color: $color-background;
+  }
+
+  &-prev:hover,
+  &-next:hover {
+    background-color: $color-foreground;
+  }
+
+  &-prev:focus,
+  &-next:focus {
+    z-index: 999;
+  }
+
+  &-title {
+    flex-grow: 5;
+    flex-basis: max-content;
+  }
+
+  &-weekdays {
+    flex-grow: 1;
+    flex-basis: 0;
+
+    .sh-calendar-cell {
+      font-weight: bold;
+    }
+  }
+
+  &-dates {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 6;
+    flex-basis: 0;
+
+    .sh-calendar-fix {
+      flex-grow: 5;
+    }
+
+    .sh-calendar-row {
+      flex-grow: 1;
+    }
+
+    .sh-calendar-cell {
+      background-color: $color-background;
+      border: solid 1px $color-background;
+    }
+  }
+
+  .sh-calendar-cell.sh-calendar-date {
+    cursor: pointer;
+  }
+
+  .sh-calendar-cell.sh-calendar-date:focus {
+    z-index: 999;
+  }
+
+  .sh-calendar-cell.sh-calendar-date:not(.sh-calendar-past):hover {
+    background-color: $color-foreground;
+    border: solid 1px $color-foreground;
+    color: $color-background;
+  }
+
+  .sh-calendar-cell.sh-calendar-date.sh-calendar-date--selected {
+    background-color: $color-selected-date;
+    border: solid 1px $color-selected-date;
+    color: $color-background;
+  }
+
+  .sh-calendar-cell.sh-calendar-date.sh-calendar-past {
+    color: $color-placeholder;
+    cursor: not-allowed;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  &-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}

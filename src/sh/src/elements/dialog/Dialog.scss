@@ -1,0 +1,65 @@
+@import './../../_vars';
+
+.sh-dialog {
+
+}
+
+.sh-modal {
+  .sh-dialog {
+    position: relative;
+    width: 624px;
+    min-height: 300px;
+    max-height: 624px;
+
+    display: flex;
+    flex-direction: column;
+
+    & > .sh-header {
+      color: $color-foreground;
+      background-color: $color-alternative-background;
+      align-items: flex-start;
+      flex-shrink: 0;
+
+      & + .sh-content {
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 12px 24px;
+        margin-top: 14px;
+      }
+    }
+
+    .sh-notification {
+      top: 46px;
+    }
+
+    & > .sh-content {
+      flex: 1;
+      padding: 24px;
+
+      overflow-y: auto;
+    }
+
+    & > .sh-footer {
+      flex-shrink: 0;
+
+      padding: 11px 24px;
+
+      background-color: $color-alternative-background;
+
+      .sh-button-icon--delete:not(:disabled) {
+        color: $color-background;
+        background-color: $color-attention;
+        border-color: $color-attention;
+
+        &:hover:not(:disabled) {
+          color: $color-attention;
+          background-color: $color-background;
+        }
+      }
+    }
+  }
+}

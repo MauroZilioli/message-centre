@@ -1,0 +1,83 @@
+@import './../../_vars';
+
+.sh-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10001;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba($color-foreground, .3);
+}
+
+.sh-modal {
+  position: absolute;
+  border-radius: 0;
+  background-color: $color-background;
+  margin-top: 140px;
+
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+
+  &.ReactModal__Content {
+    transition: margin-top .2s ease-out;
+    margin-top: 110px;
+
+    &--after-open {
+      margin-top: 100px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &_button-close {
+    position: absolute;
+    height: 36px;
+    width: 36px;
+    right: 6px;
+    top: 6px;
+    overflow: hidden;
+    z-index: 101;
+
+    background-color: transparent;
+    color: $color-foreground;
+    border: none;
+
+    &::before {
+      display: inline-block;
+      font-family: 'Shicons';
+      font-size: 18px;
+      content: '\e815';
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.75;
+    }
+  }
+
+  &--confirm {
+    width: 600px;
+    top: 53px;
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    margin-left: -300px;
+  }
+
+  .sh-notification {
+    position: absolute;
+    top: 0;
+    margin: 0;
+  }
+}
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}

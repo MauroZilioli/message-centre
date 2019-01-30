@@ -1,0 +1,46 @@
+@import './../node_modules/normalize.css/normalize.css';
+
+@import './_vars';
+@import './_fonts';
+@import './_login';
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: $color-background;
+  font: normal 15px 'Futura';
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input::-webkit-input-placeholder {
+  color: $color-disabled-foreground;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+
+input[type='text'][readonly] {
+  border-color: transparent;
+  background: transparent;
+}
+
+body,
+a {
+  color: $color-foreground;
+}
+
+a {
+  text-decoration: none;
+}

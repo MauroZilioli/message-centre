@@ -1,0 +1,95 @@
+@import './../../_vars';
+
+.sh-button {
+  display: inline-block;
+  min-width: 88px;
+  padding: 8px 16px;
+  margin: 1px;
+
+  border: 2px solid $color-foreground;
+  border-radius: 0;
+  outline-offset: -1px;
+  background-color: $color-foreground;
+  color: $color-background;
+  cursor: pointer;
+
+  font: bold 11px 'Futura';
+  vertical-align: middle;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  &:hover:not(:disabled) {
+    background-color: $color-background;
+    color: $color-foreground;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  }
+
+  &--link {
+    color: $color-foreground;
+    border: none;
+    background: transparent;
+
+    font: normal 15px 'Futura';
+    text-transform: none;
+    letter-spacing: 0;
+
+    &:hover:not(:disabled) {
+      border: none;
+      background-color: transparent;
+      box-shadow: none;
+
+      color: $color-highlight;
+    }
+  }
+
+  &--cancel {
+    border-color: $color-foreground;
+    background: $color-background;
+    color: $color-foreground;
+
+    &:hover {
+      text-decoration: none;
+      background: $color-foreground;
+      color: $color-background;
+    }
+  }
+  &--submit {
+
+  }
+  &--finish {
+
+  }
+
+  &[disabled] {
+    border-color: $color-disabled-foreground;
+    background-color: $color-disabled-foreground;
+    color: $color-background;
+    cursor: default;
+  }
+
+  &-icon::before {
+    display: inline-block;
+    vertical-align: baseline;
+    font-family: 'Shicons';
+    margin-right: 8px;
+    content: '\f143';
+  }
+  &-icon--add::before {
+    content: '\e813'; // plus
+  }
+  &-icon--delete::before {
+    content: '\e812'; // trash
+  }
+  &-icon--edit::before {
+    content: '\e80e'; // edit
+  }
+  &-icon--more::before {
+    content: '\e819'; // more
+  }
+  &-icon--logout::before {
+    content: '\e81f'; // logout
+  }
+
+}

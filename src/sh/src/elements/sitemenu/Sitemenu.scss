@@ -1,0 +1,97 @@
+@import './../../_vars';
+
+.sh-sitemenu {
+  width: 1024px;
+}
+
+.sh-sitemenu,
+.sh-sitemenugroup {
+  display: flex;
+  height: 100%;
+}
+
+// .sh-sitemenu {
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.sh-sitemenugroup {
+  padding: 0;
+  flex: 1;
+  align-items: center;
+  margin-left:40px;
+}
+.sh-sitemenugroup:last-child {
+  flex: 0;
+}
+
+.sh-sitemenuitem {
+  height: 100%;
+
+  list-style: none;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: default;
+}
+
+.sh-sitemenuitem a,
+.sh-sitemenuitem span {
+  display: inline-block;
+  height: 100%;
+  padding: 20px;
+  font-weight: inherit;
+  white-space: nowrap;
+
+  &:hover,
+  &:active {
+    border: none;
+  }
+}
+
+.sh-sitemenuitem span {
+  background-color: $color-disabled-foreground;
+  color: $color-background;
+  text-transform: uppercase;
+  line-height: 16px;
+}
+
+.sh-sitemenuitem a {
+  &:hover,
+  &:active,
+  &:link,
+  &:visited {
+    color: $color-background;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $color-attention;
+    color: $color-background;
+  }
+
+  &.link--active {
+    background-color: $color-attention;
+
+    &:hover {
+      color: $color-background;
+    }
+  }
+}
+
+.sh-sitemenulogo {
+  //background: transparent url(./../../../../assets/images/icon_th.png);
+  height: 35px;
+  line-height: 34px;
+  padding-left: 66px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+
+  &:only-child {
+    position: absolute;
+    right: 50%;
+    margin-right: -33px;
+  }
+}

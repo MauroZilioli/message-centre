@@ -1,0 +1,91 @@
+@import './../../_vars';
+
+//
+$color-table-border-1: $color-disabled-foreground;
+$color-table-border-2: $color-foreground;
+
+.sh-table {
+  margin-bottom: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  &-head,
+  &-foot,
+  &-row {
+    display: flex;
+  }
+
+  &-cell {
+    width: 200px;
+    padding: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-head {
+    background-color: $color-disabled-background;
+    text-transform: uppercase;
+  }
+  &-row {
+    background-color: white;
+    &--head {
+      background-color: $color-alternative-background;
+    }
+  }
+
+  // Primary borders
+  &-cell {
+    border-bottom: solid 1px $color-table-border-1;
+    border-right: solid 1px $color-table-border-1;
+  }
+  &-cell--noborder {
+    border-right-color: transparent;
+  }
+  &-cell:first-child {
+    border-left: solid 1px $color-table-border-1;
+  }
+  &-row:first-child &-cell,
+  &-head:first-child &-cell {
+    border-top: solid 1px $color-table-border-1;
+  }
+  // Secondary borders
+  &-cell:first-child {
+    border-left-color: $color-table-border-2;
+  }
+  &-cell:last-child,
+  &-cell.sh-table-cell--noborder:last-child {
+    border-right-color: $color-table-border-2;
+  }
+  &-row:first-child &-cell,
+  &-head:first-child &-cell {
+    border-top-color: $color-table-border-2;
+  }
+  &-row:last-child &-cell,
+  &-head:last-child &-cell,
+  &-foot:last-child &-cell {
+    border-bottom-color: $color-table-border-2;
+  }
+  &-head &-cell {
+    border-bottom-color: $color-table-border-2;
+    // border-right-color: $color-table-border-2;
+  }
+
+  //
+  .sh-button {
+    background: none;
+    border: none;
+    color: $color-foreground;
+    padding: 0;
+    margin: 0;
+    margin-right: 14px;
+    text-decoration: underline;
+    text-transform: capitalize;
+    min-width: auto;
+  }
+  .sh-button:hover {
+    color: rgba($color-foreground, .5);
+  }
+}

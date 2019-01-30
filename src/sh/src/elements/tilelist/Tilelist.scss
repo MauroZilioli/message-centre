@@ -1,0 +1,56 @@
+@import './../../_vars';
+
+.sh-tilelist {
+  background-color: $color-background;
+}
+
+.sh-tile {
+  width: 300px;
+  height: 300px;
+
+  display: inline-block;
+  cursor: pointer;
+
+  &_container {
+    position: relative;
+    margin: 24px 15px;
+  }
+
+  &_image {
+    width: 275px;
+    height: 275px;
+    background-color: $color-placeholder;
+  }
+
+  .sh-tile_overlay {
+    width: 100%;
+    height: 100%;
+  }
+
+  &_content {
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &:hover:not([disabled]) {
+    .sh-tile_overlay {
+      background-color: rgba($color-foreground, 0.3);
+    }
+
+    .sh-tile_content {
+      text-decoration: underline;
+    }
+  }
+
+  &[disabled] {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  &--highlight {
+    background-color: rgba($color-foreground, 0.3);
+  }
+}

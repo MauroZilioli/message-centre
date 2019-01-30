@@ -1,0 +1,68 @@
+@import './../../_vars';
+
+.sh-panel {
+  background-color: $color-background;
+  border-radius: 2px;
+  margin-bottom: 24px;
+
+  &_header {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    line-height: 24px;
+
+    display: flex;
+    flex-direction: row;
+
+    padding: 24px;
+
+    &_text {
+      flex: 1;
+      height: 24px;
+
+      vertical-align: baseline;
+    }
+
+    &_button {
+      width: 24px;
+      height: 24px;
+      overflow: hidden;
+
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+
+      &::before {
+        display: inline-block;
+        vertical-align: baseline;
+        font-family: 'Shicons';
+        font-size: 15px;
+        font-weight: bold;
+
+        content: '\e818';
+      }
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    padding: 24px;
+    padding-top: 0;
+  }
+
+  &--collapsed {
+    .sh-panel_header_button {
+      &::before {
+        content: '\e813';
+      }
+    }
+    .sh-panel_content {
+      display: none;
+    }
+  }
+}

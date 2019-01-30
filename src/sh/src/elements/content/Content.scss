@@ -1,0 +1,7 @@
+@import './../../_vars';
+
+.sh-content {
+  & > .sh-header {
+    background-color: $color-alternative-background;
+  }
+}

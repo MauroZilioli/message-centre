@@ -1,0 +1,95 @@
+.conversations {
+
+  .sh-header {
+    background-color: white !important;
+  }
+
+  .conversations-header {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .conversations-table {
+    -webkit-print-color-adjust: exact;
+    -webkit-tap-highlight-color: #000;
+
+    &-name {
+      font-size: 15px;
+      font-weight: 900;
+      align-self: flex-start;
+      text-transform: uppercase;
+      display: block;
+      letter-spacing: 1px;
+    }
+
+    &-picture {
+      width: 48px;
+      height: 48px;
+      padding: 5px;
+
+      &-img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &-tier-country {
+      color: #9B9B9B;
+      font-size: 12px;
+    }
+
+  }
+
+  .conversations-list {
+
+    &-card {
+      position: relative;
+
+      // front/back
+      .conversations-list-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+      &:not(:hover) {
+        .conversations-list-card-back {
+          display: none;
+        }
+      }
+
+      &:hover {
+        // .sh-header,
+        .conversations-list-card-front {
+          opacity: 0.1;
+          transition: opacity 0.2s ease-out;
+        }
+      }
+    }
+
+    &-card-back {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      place-content: center;
+      height: 100%;
+
+      .sh-button {
+        min-width: 120px;
+      }
+    }
+  }
+
+  .sh-card {
+    box-shadow: 0 0 20px 0 #d5d5d5;
+  }
+
+  .card-region-name {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+}

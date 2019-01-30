@@ -1,0 +1,106 @@
+@import './../../_vars';
+
+.sh-selectbox {
+  min-width: 290px;
+  margin: 1px;
+
+  // Beatiful focus indicator
+  @supports (outline: -webkit-focus-ring-color) {
+    // &.Select {
+    //   & > .Select-control {
+    //     border-bottom-color: $color-disabled-foreground;
+    //   }
+    // }
+    &.Select.is-focused {
+      & > .Select-control {
+        outline: none;
+        border-color: transparent;
+        border-bottom-color: $color-focus;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .Select-control {
+    border-color: transparent;
+    border-bottom-color: $color-disabled-foreground;
+    border-width: 1px;
+    border-radius: 0;
+    height: 28px;
+
+    .Select-input {
+      height: 24px;
+    }
+  }
+
+  // Arrow
+  &:hover,
+  &.is-focused {
+    .Select-arrow {
+      border-color: $color-foreground transparent transparent;
+    }
+  }
+
+  &.Select.is-open {
+    .Select-arrow {
+      border-color: transparent transparent $color-foreground;
+    }
+
+    & > .Select-control {
+      border-bottom-color: $color-focus;
+    }
+  }
+
+  .Select-menu-outer {
+    position: absolute;
+    border-width: 1px;
+    border-color: $color-disabled-foreground;
+    border-radius: 0;
+    border-top: none;
+    margin-top: 0px;
+  }
+
+  .Select-option {
+    padding: 4px 8px;
+    border-top: solid 1px $color-disabled-background;
+    color: $color-foreground;
+  }
+
+  &.Select.has-value.Select--single:not(.is-disabled) > .Select-control .Select-value .Select-value-label {
+    color: $color-foreground;
+  }
+
+  .Select-placeholder,
+  &.Select--single > .Select-control .Select-value {
+    line-height: 28px;
+    padding-left: 0px;
+    color: #bec1d0; // $color-placeholder;
+  }
+
+  &.Select.is-disabled > .Select-control {
+    background-color: $color-disabled-background;
+    border-color: $color-disabled-foreground;
+
+    .Select-value .Select-value-label {
+      color: $color-disabled-foreground;
+    }
+  }
+
+  &[disabled] {
+    color: $color-disabled-foreground;
+  }
+
+  &--invalid {
+    &.Select > .Select-control {
+      border-bottom-color: $color-attention;
+    }
+  }
+}
+
+.sh-selectboxitem {
+  font: inherit;
+}
+
+.sh-selectbox-tether {
+  z-index: 10010;
+}

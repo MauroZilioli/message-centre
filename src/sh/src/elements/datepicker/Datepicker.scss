@@ -1,0 +1,73 @@
+@import './../../_vars';
+
+.sh-datepicker{
+  &-calendarButton {
+    border: 0;
+    background-color: $color-background;
+  }
+
+  &-icon--calendar::before {
+    display: inline-block;
+    vertical-align: baseline;
+    font-family: 'Shicons';
+    content: '\e805'; // calendar
+  }
+
+  &-input {
+    width: 92px;
+    margin: 1px;
+
+    display: inline-flex;
+
+    background-color: $color-background;
+
+    border: none;
+    border-bottom: solid 1px $color-disabled-foreground;
+    border-radius: 0;
+
+    padding: 2px 0px;
+
+    float: left;
+
+    input {
+      width: 18px;
+      padding: 0;
+
+      border: none;
+
+      font: inherit;
+      letter-spacing: inherit;
+      color: inherit;
+
+      // text-align: right;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    label:last-child input {
+      width: 37px;
+    }
+
+    &[disabled] {
+      background-color: $color-disabled-background;
+      border-color: $color-disabled-foreground;
+      color: $color-disabled-foreground;
+      cursor: default;
+    };
+
+    &--focus:not([readOnly]) {
+      outline: none;
+      border-bottom-color: $color-focus;
+    }
+
+    &--invalid:not([readOnly]) {
+      border-bottom-color: $color-attention;
+    }
+
+    &[readOnly] {
+      border-bottom-color: transparent;
+    }
+  }
+}

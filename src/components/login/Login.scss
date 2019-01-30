@@ -1,0 +1,180 @@
+.login {
+  font-size: 14px;
+  color: #00174F;
+
+  .login-main {
+    position: absolute;
+    margin-left: -175px;
+    margin-top: 80px;
+    padding: 70px 60px 70px 60px;
+    box-shadow: 0 0 20px 0 #d5d5d5;
+  }
+
+  .login-head {
+    text-transform: uppercase;
+    text-align: center;
+
+    &-title {
+      font: bold 17px 'Futura';
+      letter-spacing: 2px;
+      padding-bottom: 36px;
+    }
+  }
+
+  .notifications {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-align: center;
+
+    .notification--error {
+      color: #bc2433;
+    }
+  }
+
+  .input {
+    border: 0px;
+  }
+
+  .input-label {
+    display: block;
+  }
+  .radio-label {
+    display: inline-block;
+  }
+  .input-label,
+  .radio-label {
+    margin: 10px;
+    margin-top: 30px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .input[type=radio]:first-child {
+    margin-left: 10px;
+  }
+
+  // Fixes autofill colors in webkit browsers
+  .input:-webkit-autofill,
+  .input:-webkit-autofill:focus .input:-webkit-autofill,
+  .input:-webkit-autofill:hover {
+    -webkit-text-fill-color: #00174F;
+  }
+  .input:-webkit-autofill,
+  .input:-webkit-autofill:active,
+  .input:-webkit-autofill:focus,
+  .input:-webkit-autofill:hover {
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  // re-used
+  .input[type=text],
+  .input[type=email],
+  .input[type=password],
+  .input[type=email]:focus,
+  .input[type=password]:focus {
+    width: 350px;
+    border-bottom: 1px solid #9B9B9B;
+    color: #00174F;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: inherit;
+  }
+  .input[type="radio"] {
+    opacity: 0;
+    + .radio-label {
+      &:before {
+        content: '';
+        background: transparent;
+        border-radius: 100%;
+        border: 3px solid rgba(250, 250, 250, 0.5);
+        box-sizing: border-box;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        position: relative;
+        top: 1px;
+        margin-right: 14px;
+        vertical-align: top;
+        cursor: pointer;
+        text-align: center;
+        transition: all 250ms ease;
+      }
+    }
+    &:checked {
+      + .radio-label {
+        &:before {
+          border-color: #ffffff;
+          box-shadow: inset 0 0 0 2px #ffffff;
+        }
+      }
+    }
+    &:focus {
+      + .radio-label {
+        &:before {
+          outline: none;
+          border-color: #ffffff;
+        }
+      }
+    }
+    &:disabled {
+      + .radio-label {
+        &:before {
+          box-shadow: inset 0 0 0 2px #ffffff;
+          border: 3px solid rgba(250, 250, 250, 0.5);
+        }
+      }
+    }
+    + .radio-label {
+      &:empty {
+        &:before {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .login-account-options {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    color: #00174F;
+
+    &-forgot-password {
+      display: inline-block;
+    }
+
+    &-separator {
+      display: inline-block;
+    }
+
+    &-create-account {
+      display: inline-block;
+    }
+
+  }
+
+  //
+  .button {
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #14BE82;
+    border: 1px solid #14BE82;
+    border-radius: 0;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 14px 45px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+  }
+  .input:disabled:-webkit-autofill {
+    -webkit-text-fill-color: silver;
+  }
+  .input:disabled {
+    color: silver;
+  }
+}

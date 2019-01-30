@@ -1,0 +1,14 @@
+.sh-sidebar {
+  position: fixed;
+
+  width: 240px;
+  height: 100%;
+
+  overflow-y: auto;
+  padding-bottom: 87px;
+
+  & ~ * {
+    margin-left: 240px + 32px;
+    width: 1024px - 240px - 32px; // 952px;
+  }
+}

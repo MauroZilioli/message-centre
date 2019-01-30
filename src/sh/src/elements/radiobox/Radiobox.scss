@@ -1,0 +1,84 @@
+@import './../../_vars';
+
+.sh-radiobox {
+  display: inline-block;
+  margin: 12px;
+  margin-left: 8px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &_icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    
+    display: inline-block;
+    vertical-align: baseline;
+    background-color: $color-background;
+    border: solid 2px $color-foreground;
+    border-radius: 10px;
+
+    &::before {
+      width: 10px;
+      height: 10px;
+
+      display: inline-block;
+      vertical-align: baseline;
+      border: solid 3px $color-background;
+      border-radius: 8px;
+      content: '';
+    }
+  }
+
+  &_input:focus ~ &_icon {
+    box-shadow: 0 0 2px 1px rgb(59, 153, 252);
+  }
+
+  &:hover &_input:not(:disabled):not(:focus) ~ &_icon {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &_input {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+
+    & + .sh-checkbox_icon {
+
+    }
+    &:checked + .sh-radiobox_icon {
+      &::before {
+        background-color: $color-highlight;
+      }
+    }
+    &:disabled + .sh-radiobox_icon {
+      color: $color-disabled-foreground;
+      border-color: $color-disabled-foreground;
+
+      &::before {
+        border-color: $color-disabled-background;
+        background-color: $color-disabled-background;
+      }
+    }
+    &:disabled:checked + .sh-radiobox_icon {
+      &::before {
+        background-color: $color-disabled-foreground;
+      }
+    }
+    &:disabled ~ .sh-checkbox_content {
+      color: $color-disabled-foreground;
+    }
+  }
+
+  &_content {
+    padding-left: 14px;
+
+    &:empty {
+      padding-left: 0;
+    }
+  }
+}

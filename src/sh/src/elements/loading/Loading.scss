@@ -1,0 +1,30 @@
+@import './../../_vars';
+
+.sh-loading {
+  padding: 5px;
+  margin: 5px;
+  line-height: 80px;
+
+  &::before {
+    margin-right: 10px;
+
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Shicons';
+    font-size: 50px;
+    line-height: 50px;
+    content: '\e824';
+
+    animation: 2s infinite sh--animation--rotate linear;
+  }
+}
+
+@keyframes sh--animation--rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

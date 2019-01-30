@@ -1,0 +1,58 @@
+@import './../../_vars';
+
+.sh-notification {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  z-index: 102;
+
+  padding: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: $color-foreground;
+  background-color: $color-background;
+
+  &--warn {
+    color: $color-background;
+    background-color: $color-highlight;
+  }
+
+  &--error {
+    color: $color-background;
+    background-color: $color-attention;
+  }
+
+  &_button-dismiss {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 7px;
+    right: 7px;
+    overflow: hidden;
+
+    background-color: rgba($color-disabled-foreground, 0.75);
+    color: $color-background;
+    border: none;
+
+    &::before {
+      display: inline-block;
+      font-family: 'Shicons';
+      font-size: 28px;
+      content: '\e815';
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-disabled-background;
+    }
+  }
+
+  &_content {
+
+  }
+}

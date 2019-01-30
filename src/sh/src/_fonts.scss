@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Futura';
+  src: url('./assets/fonts/futura/FuturaStd-Book.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/futura/FuturaStd-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./assets/fonts/futura/FuturaStd-Book.woff') format('woff'), /* Pretty Modern Browsers */
+    url('./assets/fonts/futura/FuturaStd-Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('./assets/fonts/futura/FuturaStd-Book.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Futura';
+  font-weight: bold;
+  src: url('./assets/fonts/futura/FuturaStd-Bold.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/futura/FuturaStd-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./assets/fonts/futura/FuturaStd-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+    url('./assets/fonts/futura/FuturaStd-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('./assets/fonts/futura/FuturaStd-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Shicons';
+  src: url('./assets/fonts/shicons/shicons.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/shicons/shicons.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./assets/fonts/shicons/shicons.woff') format('woff'), /* Pretty Modern Browsers */
+    url('./assets/fonts/shicons/shicons.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('./assets/fonts/shicons/shicons.svg#svgFontName') format('svg'); /* Legacy iOS */
+}

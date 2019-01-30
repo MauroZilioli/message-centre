@@ -1,0 +1,7 @@
+@import './../../_vars';
+
+.sh-link {
+  &:hover {
+    color: $color-highlight;
+  }
+}

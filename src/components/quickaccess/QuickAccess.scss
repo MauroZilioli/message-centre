@@ -1,0 +1,96 @@
+.quickaccess {
+  margin-top: 9px;
+
+  &-button {
+    min-width: 128px;
+
+    color: #ffffff;
+    background-color: #17995A;
+
+    &:hover:not(:disabled) {
+      color: #17995A;
+      background-color: #ffffff;
+    }
+  }
+
+  &-dialog {
+    width: 648px;
+  }
+
+  &-modal &-dialog > &-list {
+    padding: 12px;
+  }
+
+  &-list {
+    padding: 12px;
+
+    &-item {
+      width: 176px;
+      height: 176px;
+      margin: 12px;
+
+      display: inline-block;
+      padding: 12px;
+      text-align: center;
+      line-height: 176px - 12px * 2;
+
+      background-color: #f7f4f4;
+      color: #00174f;
+
+      font: bold 11px 'Futura';
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &::before {
+        height: 72px;
+        width: 100%;
+        margin-top: 36px;
+
+        display: block;
+
+        color: #CC0C2F;
+
+        font-family: 'Shicons';
+        font-size: 48px;
+      }
+
+      &[data-value=assortment]::before {
+        content: '\e814';
+      }
+      &[data-value=country]::before {
+        content: '\e816';
+      }
+      &[data-value=division]::before {
+        content: '\e817';
+      }
+      &[data-value=season]::before {
+        content: '\e81b';
+      }
+      &[data-value=showroom]::before {
+        content: '\e81c';
+      }
+      &[data-value=user]::before {
+        content: '\e81e';
+      }
+      &[data-value=assortmentimage]::before {
+        content: '\e814';
+      }
+      &[data-value=tags]::before {
+        content: '#';
+      }
+      &[data-value=library]::before {
+        content: '\e80b';
+      }
+
+
+      &:hover {
+        background-color: #17995A;
+        color: white;
+
+        &::before {
+          color: white;
+        }
+      }
+    }
+  }
+}

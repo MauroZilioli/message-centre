@@ -1,0 +1,83 @@
+@import './../../_vars';
+
+.sh-taglist {
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  .sh-taglistitem {
+    min-width: 80px;
+    margin: 2px;
+    overflow: hidden;
+
+    display: inline-block;
+    padding: 1px 8px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    background-color: $color-alternative-background;
+    cursor: pointer;
+  }
+
+  &[type=add] {
+    .sh-taglistitem {
+      color: $color-background;
+      background-color: $color-highlight;
+
+      &::before {
+        font-family: 'Shicons';
+        font-size: 12px;
+        margin-right: 4px;
+        margin-left: 0px;
+        content: '\e813';
+      }
+    }
+  }
+
+  &[type=remove] {
+    .sh-taglistitem {
+      color: $color-foreground;
+      background-color: $color-alternative-background;
+
+      &::before {
+        font-family: 'Shicons';
+        font-size: 12px;
+        margin-right: 4px;
+        margin-left: 0px;
+        color: $color-attention;
+        content: '\e818';
+      }
+    }
+  }
+
+  &[type=filter] {
+    .sh-taglistitem {
+      color: $color-background;
+      background-color: $color-foreground;
+
+      &:hover {
+        color: $color-alternative-background;
+      }
+
+      &::before {
+        margin-right: 8px;
+
+        font-family: 'Shicons';
+        font-size: 11px;
+        font-weight: bold;
+        line-height: normal;
+        content: '\e815';
+      }
+
+      &[disabled] {
+        color: $color-disabled-foreground;
+        cursor: default;
+
+        &::before {
+          margin: 0;
+          content: '';
+        }
+      }
+    }
+  }
+}

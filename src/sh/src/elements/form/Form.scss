@@ -1,0 +1,11 @@
+@import './../../_vars';
+
+.sh-form {
+  & > .sh-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    background-color: $color-background;
+  }
+}

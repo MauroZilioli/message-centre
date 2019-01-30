@@ -1,0 +1,12 @@
+.sh-modal {
+  & > .sh-wizard {
+    min-width: 710px;
+    min-height: 300px;
+
+    .sh-wizard_content {
+      .sh-notification {
+        top: 0;
+      }
+    }
+  }
+}

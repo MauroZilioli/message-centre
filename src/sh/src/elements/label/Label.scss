@@ -1,0 +1,14 @@
+@import './../../_vars';
+
+.sh-label {
+  margin-left: 1px;
+
+  // margin-top: 8px;
+  // margin-bottom: 8px;
+
+  text-transform: uppercase;
+  font: bold 11px 'Futura';
+  color: $color-placeholder;
+
+  padding-bottom: 5px;
+}
