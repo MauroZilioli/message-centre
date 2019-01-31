@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import * as SH from './../../../sh/src/elements';
 
+import Messages from '../../messages/Messages';
+
 import './ConversationUpdate.scss';
 
 class ConversationUpdate extends React.Component {
@@ -62,14 +64,10 @@ class ConversationUpdate extends React.Component {
                     <h2>{conversation.conversation.name}</h2>
                 </SH.Header>
                 <SH.Content>
-                    {conversationMessages.map(message => (
-                        <SH.Field key={`field-${message.id}`}>
-                            <SH.Label key={`label-${message.id}`}>
-                                {message.timestamp + " - " + users.find(x => x.id === message.senderId).name}
-                            </SH.Label>
-                            <SH.Output key={`message-${message.id}`} value={message.message}/>
-                        </SH.Field>
-                    ))}
+                    <Messages
+                        messages={conversationMessages}
+                        users={users}
+                        />
                     <SH.Field>
                         <SH.Textbox
                             value={message}

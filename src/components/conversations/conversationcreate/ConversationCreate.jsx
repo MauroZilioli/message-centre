@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import * as SH from './../../../sh/src/elements';
 
+import Users from './../../users/Users';
+
 import './ConversationCreate.scss';
 
 class ConversationCreate extends React.Component {
@@ -26,7 +28,7 @@ class ConversationCreate extends React.Component {
         });
     }
 
-    addNewUser(event, user) {
+    addNewUser(user) {
         let usersList = this.state.conversationUsers;
         usersList.push(user);
         this.setState({
@@ -52,17 +54,7 @@ class ConversationCreate extends React.Component {
         this.props.onAccept(conversation);
     }
 
-    selectableUsers(total, selected) {
-        let available = [];
 
-        total.forEach((element) => {
-            if (!selected.includes(element)) {
-                available.push(element);
-            }
-        })
-
-        return available;
-    }
 
     render() {
         const {
@@ -74,8 +66,6 @@ class ConversationCreate extends React.Component {
             users,
             isSaving,
         } = this.props;
-
-        let selectableUsers = this.selectableUsers(users, conversationUsers);
 
         return (
             <SH.Dialog onSubmit={() => this.handleSubmitClick()}>
@@ -107,23 +97,11 @@ class ConversationCreate extends React.Component {
                             </div>
                         ))}
                     </SH.Field>
-                    <SH.Field>
-                        <SH.Label htmlFor="conversation-create-addusers">
-                            Add Users:
-                        </SH.Label>
-                        {selectableUsers.map(user => (
-                            <div key={`user-${user.id}`} id={`user-${user.id}`}>
-                                <SH.Textbox
-                                    value={user.name}
-                                    disabled={true}
-                                />
-                                <SH.Button
-                                    icon="add"
-                                    type="link"
-                                    onClick={event => this.addNewUser(event, user)} />
-                            </div>
-                        ))}
-                    </SH.Field>
+                    <Users
+                        users={users}
+                        conversationUsers={conversationUsers}
+                        addNewUser={user => this.addNewUser(user)}
+                        />
                 </SH.Content>
                 <SH.Footer>
                     <SH.Button
